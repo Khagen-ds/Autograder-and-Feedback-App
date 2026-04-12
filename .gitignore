@@ -1,0 +1,21 @@
+# Py cache
+__pycache__/
+*.pyc
+
+# Vir envi
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# artefacts
+*.pth
+*.pkl
+
+# datasets
+*.csv
+
+# OS files - some said could be needed
+.DS_Store
+Thumbs.db
