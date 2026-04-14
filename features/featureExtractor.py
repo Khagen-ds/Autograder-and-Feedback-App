@@ -6,9 +6,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 
 class FeatureExtractor:
-    def __init__(self, prompt):
-        self.prompt = prompt
-
+    def __init__(self):
         # Load models once (important for performance)
         self.nlp = spacy.load("en_core_web_sm")
         self.sim_model = SentenceTransformer("all-MiniLM-L6-v2")
@@ -34,12 +32,14 @@ class FeatureExtractor:
 
         return noun_count, verb_count, adj_count, adv_count
 
-    def prompt_similarity(self, essay):
+    def prompt_similarity(self, essay, prompt):
         essay_emb = self.sim_model.encode([essay])
         prompt_emb = self.sim_model.encode([self.prompt])
+
+
         return cosine_similarity(essay_emb, prompt_emb)[0][0]
 
-    def extract(self, text):
+    def extract(self, text, prompt):
         """
         Returns features in EXACT same order as training
         """
@@ -51,7 +51,7 @@ class FeatureExtractor:
 
         noun_count, verb_count, adj_count, adv_count = self.part_of_speech(text)
 
-        similarity = self.prompt_similarity(text)
+        similarity = self.prompt_similarity(text, prompt)
 
         features = np.array([
             word_count,
