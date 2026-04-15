@@ -24,7 +24,7 @@ class FeedbackMaker:
 
         self.model.eval()
 
-    def make_feedback(self, prompt, max_new_tokens=500):
+    def make_feedback(self, prompt, max_new_tokens=1200):
         """
         Make feedback from prompt
         """

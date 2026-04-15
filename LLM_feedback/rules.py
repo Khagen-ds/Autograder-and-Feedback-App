@@ -27,5 +27,7 @@ class CurrentRules(Rules):
         - Only reference content that exist in the sutdent's essay
         - Do NOT assume missing information
         - Do NOT repeat the same feedback in multiple bullet points
+        - Do NOT include any labels such as "Referance:", "Evidence:", or "Qoute:"
+        - Do NOT qoute sentences from the essay verbatim
         
         '''

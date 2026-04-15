@@ -36,7 +36,7 @@ class Content(OutcomeFocus):
             - Each step must be an action the student can apply
             - Each step must link to an improvement
 
-        Content you must evaluate:
+        Summarize (5 bullet points):
             - Content quality
             - Use of relevant evidence
             - Explanation depth 

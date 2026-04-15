@@ -34,7 +34,7 @@ class FeatureExtractor:
 
     def prompt_similarity(self, essay, prompt):
         essay_emb = self.sim_model.encode([essay])
-        prompt_emb = self.sim_model.encode([self.prompt])
+        prompt_emb = self.sim_model.encode([prompt])
 
 
         return cosine_similarity(essay_emb, prompt_emb)[0][0]

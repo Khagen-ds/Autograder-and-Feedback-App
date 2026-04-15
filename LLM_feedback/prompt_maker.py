@@ -1,3 +1,8 @@
+from LLM_feedback.role import Teacher, Tutor, llmAssistant
+from LLM_feedback.focus import Content, Grammar
+from LLM_feedback.rules import CurrentRules
+
+
 class FeedbackPrompt:
     """
     Combines all components into a final feedback prompt
@@ -14,7 +19,7 @@ class FeedbackPrompt:
 
         prompt = f"""
         ### Role
-        {self.role.get_prompt()}
+        {self.role.role_prompt()}
             
         ### Rules
         {self.rules.get_rules()}
@@ -45,7 +50,7 @@ def create_feedback_prompt(score, role_type, outcome_type, essay):
 
     roles = {
         "teacher": Teacher(),
-        "assistant": LLMAssistant(),
+        "assistant": llmAssistant(),
         "tutor": Tutor()
     }
 
