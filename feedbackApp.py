@@ -20,6 +20,7 @@ from LLM_feedback.prompt_maker import create_feedback_prompt
 device = "cpu"   # or "cuda" later
 
 @st.cache_resource
+#    To save resources and time
 def load_models():
     pipeline = PredictorPipeline(
         model_path="from_training/best_model_correct_larger_qwk.pth",
@@ -42,7 +43,7 @@ pipeline, llm, feature_extractor = load_models()
 st.title("Autograder and feedback system for student essays")
 
 ASAP = pd.read_csv("data/test_essays.csv")
-ASAP = ASAP[ASAP["prompt_name"] != "Facial action coding system"]
+ASAP = ASAP[ASAP["prompt_name"] != "Facial action coding system"]    #    The excluded prompt_name does not contain source_text_1. If ofther essays are missing this, add them to this list
 
 assignments = ASAP["prompt_name"].unique().tolist()
 

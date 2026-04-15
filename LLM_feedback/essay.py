@@ -38,6 +38,7 @@ class Essay:
         return f' Essay: \n {self._essay}\n Assignment: \n{self._assignment}\n Article:\n {self._assignment_article}'
 
     def get_random_essay(df):
+        '''Function for the app to select a random essay from the testing dataset (data the model has not seen)'''
         row = df.sample(1).iloc[0]
         return Essay(
             essay=row["full_text"],

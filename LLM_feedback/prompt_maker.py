@@ -16,6 +16,7 @@ class FeedbackPrompt:
         self.rules = rules
 
     def generate_prompt(self):
+        #    provide the structure of the generated feedback. The given format provides more consistent feedback. 
 
         prompt = f"""
         ### Role

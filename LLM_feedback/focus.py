@@ -6,7 +6,11 @@ class OutcomeFocus(ABC):
 
     @abstractmethod
     def get_instructions(self):
-        '''Applying what areas the LLM should focus to give feedback on, utilizing few-shot prompting to improve consistency'''
+        '''
+        Applying what areas the LLM should focus to give feedback on, providing the LLM with a clear structure to get quality feedback.
+        Content class gives feedback on the content of the essay only.
+        Grammar class gives feedback on grammar from the essay only
+        '''
 
 class Content(OutcomeFocus):
     def get_instructions(self):

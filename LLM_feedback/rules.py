@@ -2,7 +2,10 @@
 from abc import ABC, abstractmethod
 
 class Rules(ABC):
-    '''Rules for the LLM to follow'''
+    '''
+    Rules for the LLM to follow. Very imnportant for consistentcy. 
+    Use: NOT and MUST and try to make the rule clear and concise
+    '''
     @abstractmethod
     def get_rules(self):
         '''What rules the LLM must follow'''

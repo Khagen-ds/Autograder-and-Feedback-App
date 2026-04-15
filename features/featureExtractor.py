@@ -7,7 +7,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 class FeatureExtractor:
     def __init__(self):
-        # Load models once (important for performance)
+        # Load models once (important for performance as the project uses CPU only)
         self.nlp = spacy.load("en_core_web_sm")
         self.sim_model = SentenceTransformer("all-MiniLM-L6-v2")
 
